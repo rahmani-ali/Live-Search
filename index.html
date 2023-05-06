@@ -35,6 +35,14 @@
                     </ul>
                 </div>
             </div>
+            <div class="flex flex-col gap-3">
+                <h2 class="font-semibold text-lg text-gray-900">Data:</h2>
+                <ul class="flex flex-col gap-1.5">
+                    <template x-for="item in items">
+                        <li class="list-disc text-gray-800 font-medium" x-text="item"></li>
+                    </template>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
