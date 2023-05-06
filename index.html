@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Live Search</title>
+        <!-- Alpine js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!-- Tailwind Css -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body x-data="{
+            search: '',
+            items: ['foo', 'bar', 'baz', 'lorem'],
+            get filteredItems() {
+                return this.items.filter(
+                    i => i.startsWith(this.search)
+                )
+            }
+        }">
+        <div class="mx-auto mt-4 flex flex-col justify-center items-center gap-8">
+            <div class="flex flex-col gap-y-4">
+                <h1 class="font-bold text-xl text-gray-900">Live Search Demo</h1>
+                <div class="flex flex-col gap-y-2 relative">
+                    <label class="">
+                        <input x-on:input="search = $el.value" class="px-2 py-1 w-60 rounded-md border border-gray-300 focus:border-gray-400 ring-0 focus:ring-0 bg-gray-50 text-base text-gray-800" type="text" placeholder="search..." />
+                    </label>
+                    <ul x-show="search.length > 0" @click.outside="search = ''" class="absolute top-10 z-[9999] w-60 flex flex-col shadow-sm rounded-md border border-gray-400 overflow-hidden">
+                        <template x-for="item in filteredItems">
+                            <li @click="alert(item), search = ''" class="flex items-center justify-between gap-2 w-60 text-sm py-3 px-3 bg-gray-50 border-b last:border-none border-gray-300 pb-3 cursor-pointer hover:bg-white hover:px-4 duration-100">
+                                <p x-text="item" class="font-semibold"></p>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
