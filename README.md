@@ -9,5 +9,5 @@ We shared a simple View and a fake data to test. The libraries used include:
  - [Tailwind Css](https://tailwindcss.com/)
  - [Alpine js](https://alpinejs.dev/)
 
-<img src="https://user-images.githubusercontent.com/95012973/236615254-d52ebc80-d8b5-4a7b-ad6a-490a80288491.png" width="400">
-![Live Search — Mozilla Firefox 5_6_2023 12_45_15](https://user-images.githubusercontent.com/95012973/236615254-d52ebc80-d8b5-4a7b-ad6a-490a80288491.png)
+<img src="https://user-images.githubusercontent.com/95012973/236615406-044e1aa0-8518-418b-91b3-eab5d58be1c5.png" width="100%">
+
